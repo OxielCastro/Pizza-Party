@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 
@@ -46,5 +47,8 @@ class MainActivity : AppCompatActivity() {
         // Place totalPizzas into the string resource and display
         val totalText = getString(R.string.total_pizzas_num, totalPizzas)
         numPizzasTextView.text = totalText
+    }
+    fun showHelpMessage(view: android.view.View) {
+        Toast.makeText(this, "Hank needs youuuu to calculate how many pizzas he needs for his pizza party",Toast.LENGTH_LONG).show()
     }
 }

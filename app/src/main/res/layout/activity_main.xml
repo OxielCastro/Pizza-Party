@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/pizza_background_two"
     android:id="@+id/activity_main"
@@ -13,12 +15,17 @@
     tools:context="com.zybooks.pizzaparty.MainActivity">
 
     <TextView
+        android:id="@+id/howHungry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number of people who are hungry?"
         android:textColor="#FFFF00"
         android:textSize="@dimen/label_text_size"
-        android:labelFor="@id/num_attend_edit_text" />
+        android:labelFor="@id/num_attend_edit_text"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <EditText
         android:id="@+id/num_attend_edit_text"
@@ -27,32 +34,40 @@
         android:ems="5"
         android:importantForAutofill="no"
         android:inputType="number"
+        android:textColor="#FFFF00"
         android:minHeight="48dp"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/howHungry"
+        app:layout_constraintLeft_toLeftOf="@id/howHungry"/>
 
     <TextView
+        android:id="@+id/howHungryHank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="How hungry is hank?"
         android:textColor="#FFFF00"
         android:textSize="24sp"
-        android:labelFor="@id/hungry_radio_group" />
+        android:labelFor="@id/hungry_radio_group"
+        app:layout_constraintTop_toBottomOf="@id/num_attend_edit_text"
+        app:layout_constraintLeft_toLeftOf="@id/num_attend_edit_text"/>
 
     <RadioGroup
         android:id="@+id/hungry_radio_group"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/howHungryHank"
+        app:layout_constraintLeft_toLeftOf="@id/howHungryHank">
         <RadioButton
             android:id="@+id/light_radio_button"
-            android:text="Light"
+            android:text="Craving"
             android:textColor="#FFFF00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <RadioButton
             android:id="@+id/medium_radio_button"
-            android:text="Medium"
+            android:text="Famished"
             android:textColor="#FFFF00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +87,9 @@
         android:layout_marginTop="20dp"
         android:text="Total pizzas: ?"
         android:textColor="#FFFF00"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/hungry_radio_group"
+        app:layout_constraintLeft_toLeftOf="@id/hungry_radio_group"/>
 
     <Button
         android:id="@+id/calc_button"
@@ -81,5 +98,20 @@
         android:layout_marginTop="20dp"
         android:onClick="calculateClick"
         android:text="Calculate"
-        android:textColor="#FFFF00" />
-</LinearLayout>
+        android:textColor="#FFFF00"
+        app:layout_constraintTop_toBottomOf="@id/num_pizzas_text_view"
+        app:layout_constraintLeft_toLeftOf="@id/num_pizzas_text_view"/>
+
+    <Button
+        android:id="@+id/helpbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="help"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="643dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="showHelpMessage"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

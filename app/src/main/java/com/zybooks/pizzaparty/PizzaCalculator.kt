@@ -11,7 +11,7 @@ class PizzaCalculator(partySize: Int, var hungerLevel: HungerLevel) {
         }
 
     enum class HungerLevel(var numSlices: Int) {
-        LIGHT(2), MEDIUM(3), RAVENOUS(4)
+        LIGHT(5), MEDIUM(6), RAVENOUS(7)
     }
 
     val totalPizzas: Int
