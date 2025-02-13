@@ -48,37 +48,18 @@
         android:text="How hungry is hank?"
         android:textColor="#FFFF00"
         android:textSize="24sp"
-        android:labelFor="@id/hungry_radio_group"
+        android:labelFor="@id/hungry_spinner"
         app:layout_constraintTop_toBottomOf="@id/num_attend_edit_text"
         app:layout_constraintLeft_toLeftOf="@id/num_attend_edit_text"/>
 
-    <RadioGroup
-        android:id="@+id/hungry_radio_group"
-        android:layout_width="fill_parent"
+    <Spinner
+        android:id="@+id/hungry_spinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/my_blue"
         app:layout_constraintTop_toBottomOf="@id/howHungryHank"
-        app:layout_constraintLeft_toLeftOf="@id/howHungryHank">
-        <RadioButton
-            android:id="@+id/light_radio_button"
-            android:text="Craving"
-            android:textColor="#FFFF00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:id="@+id/medium_radio_button"
-            android:text="Famished"
-            android:textColor="#FFFF00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true" />
-        <RadioButton
-            android:id="@+id/ravenous_radio_button"
-            android:text="Ravenous"
-            android:textColor="#FFFF00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RadioGroup>
+        app:layout_constraintLeft_toLeftOf="@id/howHungryHank"/>
 
     <TextView
         android:id="@+id/num_pizzas_text_view"
@@ -88,8 +69,8 @@
         android:text="Total pizzas: ?"
         android:textColor="#FFFF00"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/hungry_radio_group"
-        app:layout_constraintLeft_toLeftOf="@id/hungry_radio_group"/>
+        app:layout_constraintTop_toBottomOf="@id/hungry_spinner"
+        app:layout_constraintLeft_toLeftOf="@id/hungry_spinner"/>
 
     <Button
         android:id="@+id/calc_button"
